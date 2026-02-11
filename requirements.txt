@@ -1,0 +1,5 @@
+langchain 
+langchain-google-genai 
+pypdf 
+langchain_core
+dotenv

@@ -3,3 +3,12 @@ langchain-google-genai
 pypdf 
 langchain_core
 dotenv
+
+google-generativeai
+langchain_community
+langchain_google_genai
+faiss-cpu
+chromadb
+
+langchain_pinecone
+pinecone

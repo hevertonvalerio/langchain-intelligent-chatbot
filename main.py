@@ -7,11 +7,11 @@ from langchain_core.prompts import ChatPromptTemplate
 # carregar variáveis de ambiente
 load_dotenv()
 
-api_key = os.getenv("API_KEY")
+API_KEY_GOOGLE = os.getenv("API_KEY_GOOGLE")
 
 
 # Definir modelo llm
-llm = ChatGoogleGenerativeAI(model="gemini-flash-lite-latest", temperature=0, google_api_key=api_key)
+llm = ChatGoogleGenerativeAI(model="gemini-flash-lite-latest", temperature=0, google_api_key=API_KEY_GOOGLE)
 
 
 # criar variáveis prompt teamplate e pergunta

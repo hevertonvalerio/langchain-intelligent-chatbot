@@ -13,7 +13,10 @@ API_KEY_GOOGLE = os.getenv("API_KEY_GOOGLE")
 
 
 # Definido modelo de embeddings
-embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001", google_api_key=API_KEY_GOOGLE)
+embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/gemini-embedding-001", 
+    google_api_key=API_KEY_GOOGLE
+    )
 
 
 # Criar base de dados a partir dos documentos da empresa

@@ -15,7 +15,7 @@ API_KEY_GOOGLE = os.getenv("API_KEY_GOOGLE")
 # Definido modelo de embeddings
 embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001", google_api_key=API_KEY_GOOGLE)
 d = 768
-index_hnsw = FAISS.IndexHNSWFlat(d, 32)
+# index_hnsw = FAISS.IndexHNSWFlat(d, 32)
 
 # Criar base de dados a partir dos documentos da empresa
 db = FAISS.from_documents(doc_empresa.documentos_empresa, embeddings)

@@ -10,23 +10,28 @@ load_dotenv()
 API_KEY_GOOGLE = os.getenv("API_KEY_GOOGLE")
 
 
-# Definir modelo llm
-llm = ChatGoogleGenerativeAI(model="gemini-flash-lite-latest", temperature=0, google_api_key=API_KEY_GOOGLE)
+def processo():
+    print("\nIniciando Intelligent Chatbot...\n")
 
+    def selecao_processos():
+        print("Seleção de Processos:")
+        print("1 - Faiss App")
+        print("2 - Chroma App")
+        print("3 - Pinecone App")
+        selecao = input("Digite o número do app que deseja utilizar: ")
+        return selecao
+    selecao = selecao_processos()
 
-# criar variáveis prompt teamplate e pergunta
-pergunta = "Qual é a política de home office da nossa empresa?"
-
-prompt_template = ChatPromptTemplate.from_template("Responda essa pergunta: {pergunta}")
-
-
-# criar cadeia da langchain
-chain = prompt_template | llm
-
-
-# invokar resposta
-resposta = chain.invoke({"pergunta": pergunta})
-
-
-# Exibir resposta
-print(resposta.content)
+    def executar_processo(selecao):
+        if selecao == "1":
+            import app_faiss
+        elif selecao == "2":
+            import app_chroma
+        elif selecao == "3":    
+            import app_pinecone
+        else:    
+            print("Opção inválida. Encerrando o programa.")
+            return False
+        return True
+    executar_processo(selecao)
+processo()
